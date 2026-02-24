@@ -1,7 +1,7 @@
 import type { PostType } from "../types/PostType";
 import like from "./../../assets/svg/heart.svg";
 // import comment from "./../../assets/svg/chat-teardrop.svg";
-import { FaComment } from "react-icons/fa";
+// import { FaComment } from "react-icons/fa";
 
 const Post = ({ post }: { post: PostType }) => {
   return (
@@ -45,7 +45,7 @@ const Post = ({ post }: { post: PostType }) => {
 
         <button className="flex items-center gap-2 hover:text-black">
           <span>
-          <FaComment />
+          {/* <FaComment /> */}
           </span>
           <span>{post.comments}</span>
         </button>
