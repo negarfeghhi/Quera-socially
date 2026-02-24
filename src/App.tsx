@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./Navbar";
 // import Notifications from "./components/Notifications";
 import ProfileHeader from "./components/ProfileHeader";
+import ProfileContent from "./components/ProfileContent";
 
 function App() {
   // const [open, setOpen] = useState(false)
@@ -17,7 +18,10 @@ function App() {
         <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
           <Notifications />
         </div> */}
+        <div className="flex flex-col gap-10 mx-auto w-fit">
         <ProfileHeader />
+        <ProfileContent />
+        </div>
       </div>
     </>
   );
