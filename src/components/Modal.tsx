@@ -21,7 +21,7 @@ export default function Modal({
 
   if (!open) return null;
   return (
-    <div className="absolute inset-0 bg-black/60">
+    <div className="fixed inset-0 bg-black/80">
       <div className="relative flex min-h-screen items-center justify-center p-4">
         <div className="w-full max-w-md rounded-xl bg-white p-4 shadow-xl">
           <div className="flex items-center justify-between pb-3">
