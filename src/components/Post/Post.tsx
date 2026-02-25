@@ -1,7 +1,6 @@
 import type { PostType } from "../types/PostType";
-import like from "./../../assets/svg/heart.svg";
-// import comment from "./../../assets/svg/chat-teardrop.svg";
-// import { FaComment } from "react-icons/fa";
+import { FaComment } from "react-icons/fa";
+import { AiFillLike } from "react-icons/ai";
 
 const Post = ({ post }: { post: PostType }) => {
   return (
@@ -38,14 +37,14 @@ const Post = ({ post }: { post: PostType }) => {
       <div className="flex gap-6 mt-4 text-gray-600">
         <button className="flex items-center gap-2 hover:text-black">
           <span>
-            <img src={like} />
+            <AiFillLike />
           </span>
           <span>{post.likes}</span>
         </button>
 
         <button className="flex items-center gap-2 hover:text-black">
           <span>
-          {/* <FaComment /> */}
+            <FaComment />
           </span>
           <span>{post.comments}</span>
         </button>
