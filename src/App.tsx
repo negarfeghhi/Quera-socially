@@ -6,8 +6,22 @@ import Navbar from "./Navbar";
 import ProfileHeader from "./components/ProfileHeader";
 import ProfileContent from "./components/ProfileContent";
 
+import { useEffect } from "react";
+import { login } from "./api/auth";
+import { getPosts } from "./api/posts";
+
+
 function App() {
   // const [open, setOpen] = useState(false)
+useEffect(() => {
+  const load = async () => {
+    await login("mohammad@gmail.com", "12345678mF");
+    const res = await getPosts();
+    console.log(res.data);
+  };
+
+  load();
+}, []);
 
   return (
     <>
