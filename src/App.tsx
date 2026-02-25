@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
 // import EditProfileModal from "./components/EditProfileModal";
 import Navbar from "./Navbar";
@@ -9,8 +9,24 @@ import Login from "./components/Login";
 import ProfileCard from "./components/ProfileCard";
 import CreatePost from "./components/CreatePost";
 import WhoToFollow from "./components/WhoToFollow";
+
+/*check api
+import { useEffect } from "react";
+import { login } from "./api/auth";
+import { getPosts } from "./api/posts";*/
+
 function App() {
   // const [open, setOpen] = useState(false)
+  /*check api
+useEffect(() => {
+  const load = async () => {
+    await login("mohammad@gmail.com", "12345678mF");
+    const res = await getPosts();
+    console.log(res.data);
+  };
+
+  load();
+}, []);*/
 
   return (
     <>
