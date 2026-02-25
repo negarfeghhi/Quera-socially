@@ -6,8 +6,23 @@ import Navbar from "./Navbar";
 import ProfileHeader from "./components/ProfileHeader";
 import ProfileContent from "./components/ProfileContent";
 
+/*check api
+import { useEffect } from "react";
+import { login } from "./api/auth";
+import { getPosts } from "./api/posts";*/
+
 function App() {
   // const [open, setOpen] = useState(false)
+  /*check api
+useEffect(() => {
+  const load = async () => {
+    await login("mohammad@gmail.com", "12345678mF");
+    const res = await getPosts();
+    console.log(res.data);
+  };
+
+  load();
+}, []);*/
 
   return (
     <>
@@ -19,8 +34,8 @@ function App() {
           <Notifications />
         </div> */}
         <div className="flex flex-col gap-10 mx-auto w-fit">
-        <ProfileHeader />
-        <ProfileContent />
+          <ProfileHeader />
+          <ProfileContent />
         </div>
       </div>
     </>
