@@ -29,7 +29,7 @@ useEffect(() => {
 
   return (
     <>
-      <div className=" min-h-screen w-full">
+      <div className="min-h-screen w-full ">
         <Navbar />
         {/*  */}
         <Home/>
