@@ -1,10 +1,10 @@
-import logo from "./assets/images/Link.png";
-import light from "./assets/svg/sun.svg";
-import home from "./assets/svg/house.svg";
+import logo from "./../../assets/images/Link.png";
+import light from "./../../assets/svg/sun.svg";
+import home from "./../../assets/svg/house.svg";
 
 const Navbar = () => {
   return (
-    <nav className="w-full border-b border-[#E5E5E5] px-84 py-3 flex items-center justify-between">
+    <nav className="w-full border-b border-[#E5E5E5] px-52 py-3 flex items-center justify-between">
       <img src={logo} />
       <div className="w-60 flex items-center gap-4">
         <button className="p-2 flex justify-center rounded-md items-center bg-white border border-[#E5E5E5] shadow cursor-pointer">
