@@ -8,6 +8,10 @@ import Home from "./components/pages/Home";
 // import Notifications from "./components/Notifications";
 import ProfileHeader from "./components/ProfileHeader";
 import ProfileContent from "./components/ProfileContent";
+import Login from "./components/Login";
+import ProfileCard from "./components/ProfileCard";
+import CreatePost from "./components/CreatePost";
+import WhoToFollow from "./components/WhoToFollow";
 
 /*check api
 import { useEffect } from "react";
@@ -36,11 +40,19 @@ useEffect(() => {
         {/* <button onClick={() => setOpen(true)}>Modal</button>
         <EditProfileModal open={open} onClose={() => setOpen(false)} />
         <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
-          <Notifications />
+        <Notifications />
         </div> */}
-        <div className="flex flex-col gap-10 mx-auto w-fit">
-          <ProfileHeader />
-          <ProfileContent />
+        <div className="flex gap-10">
+          <ProfileCard />
+        <div className="flex flex-col gap-10 w-fit">
+          <CreatePost />
+          <div className='hidden'>
+      <Login />
+      </div>
+        <ProfileHeader />
+        <ProfileContent />
+        </div>
+          <WhoToFollow />
         </div>
       </div>
     </>
