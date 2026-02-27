@@ -1,10 +1,22 @@
 import type { PostType } from "../types/PostType";
 import { FaComment } from "react-icons/fa";
-import { AiFillLike } from "react-icons/ai";
-import { FiSend } from "react-icons/fi";
-import Button from "./../Button/Button";
-import avatar from "./../../assets/images/avatar.png";
+import { FaHeart } from "react-icons/fa";
+import CommentBox from "./../CommentBox/CommentBox";
+import { useState } from "react";
+
 const Post = ({ post }: { post: PostType }) => {
+  const [showComment, setShowComment] = useState(false);
+  const [likesCount, setLikesCount] = useState(0);
+  const [liked, setLiked] = useState(false);
+
+  const handleLike = () => {
+    if (liked) {
+      setLikesCount(prev => prev - 1);
+    } else {
+      setLikesCount(prev => prev + 1);
+    }
+    setLiked(prev => !prev);
+  };
   return (
     <div className="p-4 rounded-xl shadow-sm border border-gray-200">
       <div className="flex items-center gap-3">
@@ -13,7 +25,7 @@ const Post = ({ post }: { post: PostType }) => {
             <img
               src={post.avatarUrl}
               alt="avatar"
-              className="w-full h-full object-cover bg-amber-200"
+              className="w-full h-full object-cover"
             />
           ) : (
             post.username[0]
@@ -38,37 +50,31 @@ const Post = ({ post }: { post: PostType }) => {
       </div>
 
       <div className="flex gap-6 mt-4 text-gray-600">
-        <button className="flex items-center gap-2 hover:text-black cursor-pointer">
-          <span>
-            <AiFillLike />
+        <button
+          onClick={handleLike}
+          className="flex items-center gap-2 hover:text-black cursor-pointer"
+        >
+          <span className={likesCount ? "text-red-800" : "text-gray-400"}>
+            <FaHeart />
           </span>
-          <span>{post.likes}</span>
+          <span className={likesCount ? "text-red-800" : "text-gray-400"}>{likesCount}</span>
         </button>
 
-        <button className="flex items-center gap-2 bg-white p-2 z-50 rounded-md hover:bg-green-400 cursor-pointer">
+        <button
+          onClick={() => setShowComment(!showComment)}
+          className="flex items-center gap-2 bg-white p-2 z-50 rounded-md hover:bg-green-400 cursor-pointer"
+        >
           <span>
-            <FaComment />
+            <FaComment
+              className={showComment ? "text-blue-800" : "text-gray-400"}
+            />
           </span>
-          <span>{post.comments}</span>
+          <span className={showComment ? "text-blue-800" : "text-gray-400"}>
+            {post.comments}
+          </span>
         </button>
       </div>
-      <div className="border-t border-t-[#b9b9b9] w-full mt-5 pt-4">
-        <div className="w-full flex gap-2 items-start">
-          <div className="w-10 h-10 rounded-full hover:bg-red-700 shrink-0">
-            <img src={avatar} className="rounded-full" />
-          </div>
-          <textarea
-            placeholder="Write a comment..."
-            className="border resize-none p-2 pb-14 w-full rounded border-[#E5E5E5]"
-          />
-        </div>
-        <div className="flex justify-end py-5">
-          <Button className="bg-black hover:bg-green-700 flex items-center gap-2 cursor-pointer">
-            <FiSend />
-            Comment
-          </Button>
-        </div>
-      </div>
+      {showComment && <CommentBox />}
     </div>
   );
 };
