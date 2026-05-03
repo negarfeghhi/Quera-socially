@@ -1,10 +1,14 @@
+import Login from "../Login";
 import PostList from "../PostList/PostList";
+import WhoToFollow from "../WhoToFollow";
 
 const Home = () => {
   return (
-    <div className="w-full flex justify-center bg-gray-100 min-h-screen pt-6">
-      <div className="w-full max-w-5xl flex justify-center gap-6">
+    <div className="w-full flex justify-center pt-6 px-24">
+      <div className="flex justify-center gap-6">
+        <Login />
         <PostList />
+        <WhoToFollow/>
       </div>
     </div>
   );
